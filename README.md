@@ -46,3 +46,7 @@ resourcePublications(
     // return data based on pagination
 }
 ```
+
+### With Prisma
+
+If you use Prisma, there is another spec-compliant package that facilitates returning data as connections: [@devoxa/prisma-relay-cursor-connection](https://github.com/devoxa/prisma-relay-cursor-connection)
