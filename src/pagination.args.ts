@@ -5,11 +5,14 @@ export class PaginationArgs {
   // Forward pagination arguments
   @Field(() => Int)
   first?: number;
-  @Field()
+
+  @Field(() => String)
   after?: string;
+
   // Backward pagination arguments
   @Field(() => Int)
   last?: number;
-  @Field()
+
+  @Field(() => String)
   before?: string;
 }
