@@ -1,5 +1,5 @@
 import { Type } from '@nestjs/common';
-import { Field, ObjectType } from '@nestjs/graphql';
+import { Directive, Field, ObjectType } from '@nestjs/graphql';
 import { PageInfo } from './page-info.model';
 
 interface IEdgeType<TItem> {
@@ -19,14 +19,13 @@ export function Paginated<TItem>(
     description: `A ${classRef.name} edge.`,
   })
   abstract class EdgeType {
-    @Field(() => String, {
-      description: 'A cursor for use in pagination.',
-    })
+    @Field(() => String, { description: 'A cursor for use in pagination.' })
     cursor: string;
 
     @Field(() => classRef, {
       description: `The item at the end of ${classRef.name}Edge.`,
     })
+    @Directive(`@cacheControl(inheritMaxAge: true)`)
     node: TItem;
   }
 
@@ -37,11 +36,11 @@ export function Paginated<TItem>(
   })
   abstract class PaginatedType implements IPaginatedType<TItem> {
     @Field(() => [EdgeType], { nullable: true, description: 'A list of edges' })
+    @Directive(`@cacheControl(inheritMaxAge: true)`)
     edges: EdgeType[];
 
-    @Field(() => PageInfo, {
-      description: 'Information to aid in pagination.',
-    })
+    @Field(() => PageInfo, { description: 'Information to aid in pagination.' })
+    @Directive(`@cacheControl(inheritMaxAge: true)`)
     pageInfo: PageInfo;
   }
   return PaginatedType as Type<IPaginatedType<TItem>>;
