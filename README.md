@@ -49,7 +49,7 @@ resourcePublications(
 
 ## Apollo Cache Compatability
 
-Be default, Apollo server won't cache if a field on resolver is an object (non-scalar), thinking non-scalar fields need fetching and are probably somehow independent ([more info](https://www.apollographql.com/docs/apollo-server/performance/caching/#default-maxage)). While in the case of pagination's `node` object or `edges`, they are already fetched and available. So I've added cache control inheritance to all the respective fields and you don't really have to worry about that. This package goes nicely with the other exonest package for GraphQL caching, [exonest/graphql-cache-control](https://github.com/exonest/graphql-cache-control)
+Be default, Apollo server won't cache if a field on resolver is an object (non-scalar), thinking non-scalar fields need fetching and are probably somehow independent ([more info](https://www.apollographql.com/docs/apollo-server/performance/caching/#default-maxage)). While in the case of pagination's `node` object or `edges`, they are already fetched and available. So we've added cache control inheritance to all the respective fields and you don't really have to worry about that. This package goes nicely with the other exonest package for GraphQL caching, [exonest/graphql-cache-control](https://github.com/exonest/graphql-cache-control)
 
 ## With Prisma
 
