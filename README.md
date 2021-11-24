@@ -1,4 +1,4 @@
-# Graphql Connections (Pagination)
+# GraphQL Connections (Pagination)
 
 This package is a spec-compliant set of models and utilities based on [Relay's Graphql Cursor Connections Specification](https://relay.dev/graphql/connections.htm) and is created using [Generics](https://docs.nestjs.com/graphql/resolvers#generics)
 
@@ -50,3 +50,7 @@ resourcePublications(
 ### With Prisma
 
 If you use Prisma, there is another spec-compliant package that facilitates returning data as connections: [@devoxa/prisma-relay-cursor-connection](https://github.com/devoxa/prisma-relay-cursor-connection)
+
+### Apollo Cache Compatability
+
+Be default, apollo server won't cache if a field on resolver is an object, thinking objects need database calls and probably are expensive to resolve. While in the case of pagination's `node` object, they are already solved. So I've added cache control inheritance to all the respective fields and you don't really have to worry about that. This package goes nicely with the other exonest package, [exonest/graphql-cache-control](https://github.com/exonest/graphql-cache-control)
