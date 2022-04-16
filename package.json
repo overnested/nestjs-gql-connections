@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -10,10 +10,10 @@
   "engines": {
     "node": ">=10"
   },
-  "homepage": "https://github.com/exonest",
+  "homepage": "https://github.com/overnested",
   "repository": {
     "type": "git",
-    "url": "https://github.com/exonest/graphql-connections"
+    "url": "https://github.com/overnested/nestjs-gql-connections"
   },
   "scripts": {
     "start": "tsdx watch",
@@ -36,16 +36,16 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@exonest/graphql-connections",
+  "name": "@overnested/nestjs-gql-connections",
   "author": "Alireza Zamani",
-  "module": "dist/graphql-connections.esm.js",
+  "module": "dist/nestjs-gql-connections.esm.js",
   "size-limit": [
     {
-      "path": "dist/graphql-connections.cjs.production.min.js",
+      "path": "dist/nestjs-gql-connections.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/graphql-connections.esm.js",
+      "path": "dist/nestjs-gql-connections.esm.js",
       "limit": "10 KB"
     }
   ],
