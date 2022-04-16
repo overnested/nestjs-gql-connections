@@ -36,7 +36,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@overnested/nestjs-gql-connections",
+  "name": "nestjs-gql-connections",
   "author": "Alireza Zamani",
   "module": "dist/nestjs-gql-connections.esm.js",
   "size-limit": [
